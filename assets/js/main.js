@@ -33,19 +33,6 @@
             });
         }
 
-        var $this = $('.category-service');
-        if ($this.find('div').length > 2) {
-            $('.category-service').append('<span><a href="javascript:;" class="showMore-cat"></a></span>');
-        }
-        
-        // If more than 2 Education items, hide the remaining
-        $('.category-service .item').slice(0,10).addClass('shown');
-        $('.category-service .item').not('.shown').hide();
-        $('.category-service .showMore-cat').on('click',function(){
-            $('.category-service .item').not('.shown').toggle();
-            $(this).toggleClass('showLess');
-        });
-
         var menutoggle = $('.menu-toggle');
         var mainmenu = $('.navbar-nav');
         
@@ -56,29 +43,6 @@
                 mainmenu.addClass('menu-open');
             }
         });
-        /**category-slider**/
-        $('.category-slider').owlCarousel({
-            loop:true,
-            margin: 15,
-            nav:true,
-            dots: false,
-            smartSpeed:1500,
-            autoWidth:true,
-            navText: [leftAngle,rightAngle],
-            responsive:{
-                0:{
-                    items:2
-                },
-                767:{
-                    items:6
-                }
-            }
-        })
-
-        $('.carousel').carousel({
-            interval: 2000
-          })
-
         /*--------------------------------------------------
             select onput
         ---------------------------------------------------*/
@@ -100,10 +64,12 @@
 
         /**course-slider**/
         $('.course-slider').owlCarousel({
-            loop:true,
+            loop:false,
             margin: 30,
             nav:true,
             dots: true,
+            autoplay: true,
+            navigation: true,
             smartSpeed:1500,
             navText: [leftAngle,rightAngle],
             responsive:{
@@ -115,10 +81,10 @@
                     margin: 20,
                 },
                 769:{
-                    items:3
+                    items:3,
                 },
                 1440:{
-                    items:4
+                    items:3,
                 }
             }
         })
